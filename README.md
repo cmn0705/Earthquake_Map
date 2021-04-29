@@ -24,31 +24,22 @@ TROUBLE SHOOTING
 Switch Java Compiler to 1.6 if you get VM problems. (Processing should work with Java 1.6, and 1.7)
 
 ---
-Goals:
+**Goals:**
 - Use sorting to answer questions about data sets
 - Implement the Comparable interface 
 - Organize the earthquake data and compute statistics on it
 
-Steps:
+**Implementation:**
+
 1. **Add functionality to the classes developed in the previous parts of the project**: EarthquakeCityMap.java , EarthquakeMarker.java , CityMarker.java , CommonMarker.java, LandQuakeMarker.java , OceanQuakeMarker.java. IF YOU ARE WORKING OFFLINE, you should once again make sure the variable offline is set to true.
 
 2. **Implement the Comparable interface in EarthquakeMarker:**
 - add the keywords “implements Comparable<EarthquakeMarker>” to the class definition.
 - implement the compareTo(EarthquakeMarker marker) method in the EarthquakeMarker class so that it sorts earthquakes in reverse order of magnitude.  
 
-3. **Add and Implement the private method void sortAndPrint(int numToPrint) in EarthquakeCityMap.**  This method will create a new array from the list of earthquake markers (there is a method in the List interface named toArray() which returns the elements in the List as an array of Objects).  Then it will sort the array of earthquake markers in reverse order of their magnitude (highest to lowest) and then print out the top numToPrint earthquakes.    If numToPrint is larger than the number of markers in quakeMarkers, it should print out all of the earthquakes and stop, but it should not crash.Call this method from setUp() to test it.  Use test2.atom as the input file, and sortandPrint.test2.out.txt is the expected output for a couple different calls to sortAndPrint.
-4. **Add your own extension!**
+3. **Add and Implement the private method void sortAndPrint(int numToPrint) in EarthquakeCityMap.**  This method will create a new array from the list of earthquake markers (there is a method in the List interface named toArray() which returns the elements in the List as an array of Objects).  Then it will sort the array of earthquake markers in reverse order of their magnitude (highest to lowest) and then print out the top numToPrint earthquakes. If numToPrint is larger than the number of markers in quakeMarkers, it should print out all of the earthquakes and stop, but it should not crash.Call this method from setUp() to test it.  Use test2.atom as the input file, and sortandPrint.test2.out.txt is the expected output for a couple different calls to sortAndPrint.
+
 ---
-**Functionality**
-* All Earthquakes are presented by a circle
-* When we click on an Earthquake type in Key section (Shallow, Intermediate, Deep), only Earthquakes of that type will appear on the Map, all other types and cities will disappear. Can make everything appear again by click on an Earthquake twice.
-
-**Additions/modifications I made to the code**
-- To make every Earthquake appear as a circle: In OceanQuakeMarker.java, change the code in the drawEarthquake method so its draw a circle instead of a square. Replace the code "pg.rect(x-radius, y-radius, 2*radius, 2*radius);" with "pg.ellipse(x, y, 2*radius, 2*radius);" 
-- In EarthquakeCityMap.java, add a method checkKeyForClick(). This method will check if an Earthquake type ((Shallow, Intermediate, Deep) in Key section is clicked on. We check this by testing the range of mouseX and mouseY coordinates. If an Earthquake type in Key section is clicked, we loop over the earthquake markers, for the earthquake markers belong to that Earthquake type, we setHidden to False, everything else setHidden to True. (Test whether an earthquake marker belong to an Earthquake type by testing the depth of that earthquake, reference to the colorDetermine and getDepth method in EarthquakeMarker.java)
-- In EarthquakeCityMap.java, also modify the method mouseClicked() so that after it uses checkCitiesForClick(), it uses checkKeyForClick() too.
-
-**Code snippets in EarthquakeCityMap.java**
 
 	public void setup() {		
 		size(900, 700, OPENGL);
@@ -96,6 +87,15 @@ Steps:
 		}
 	}
 
+4. **Add other extension!**
+* ***All Earthquakes are presented by a circle***
+To make every Earthquake appear as a circle: In OceanQuakeMarker.java, change the code in the drawEarthquake method so its draw a circle instead of a square. Replace the code "pg.rect(x-radius, y-radius, 2*radius, 2*radius);" with "pg.ellipse(x, y, 2*radius, 2*radius);" 
+
+* ***When we click on an Earthquake type in Key section (Shallow, Intermediate, Deep), only Earthquakes of that type will appear on the Map, all other types and cities will disappear. Can make everything appear again by click on an Earthquake twice.***
+In EarthquakeCityMap.java, add a method checkKeyForClick(). This method will check if an Earthquake type ((Shallow, Intermediate, Deep) in Key section is clicked on. We check this by testing the range of mouseX and mouseY coordinates. If an Earthquake type in Key section is clicked, we loop over the earthquake markers, for the earthquake markers belong to that Earthquake type, we setHidden to False, everything else setHidden to True. (Test whether an earthquake marker belong to an Earthquake type by testing the depth of that earthquake, reference to the colorDetermine and getDepth method in EarthquakeMarker.java).
+In EarthquakeCityMap.java, also modify the method mouseClicked() so that after it uses checkCitiesForClick(), it uses checkKeyForClick() too.
+
+---
 	public void mouseClicked(){
 		if (lastClicked != null) {
 			unhideMarkers();
