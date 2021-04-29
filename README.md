@@ -145,4 +145,4 @@ In EarthquakeCityMap.java, also modify the method mouseClicked() so that after i
 	}
 ---
 
-![Image](https://github.com/cmn0705/Earthquake_Map/blob/master/Chau%20Nguyen%20-%20Submit%20Final.png)
+![](https://github.com/cmn0705/Earthquake_Map/blob/master/Chau%20Nguyen%20-%20Submit%20Final.png)
