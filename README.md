@@ -12,10 +12,15 @@
 *Check out “Chau Nguyen – UML.xlsx” to see the relationship among classes*
 
 CityMarker.java
+
 CommonMarker.java
+
 EarthquakeCityMap.java
+
 EarthquakeMarker.java
+
 LandQuakeMarker.java
+
 OceanQuakeMarker.java
 - - -
 
