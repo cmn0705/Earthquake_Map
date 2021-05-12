@@ -1,4 +1,4 @@
-*Tags: Java, Object Oriented Programing*
+*Tags: Java, Object Oriented Programing*<br>
 **Description:**
 - Worked with an existing library to build an earthquake GUI map in Java OOP using a large dataset tagged by geospatial information.
 - Read earthquake data from a live RSS feed and plotted recent earthquakes on a map to highlight potential disaster zones.
