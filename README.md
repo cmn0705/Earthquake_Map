@@ -2,7 +2,7 @@
 **Description:**
 - Worked with an existing library to build an earthquake GUI map in Java OOP using a large dataset tagged by geospatial information.
 - Read earthquake data from a live RSS feed and plotted recent earthquakes on a map to highlight potential disaster zones.
-- Applied abstract class, inheritance, polymorphism, and UML (class hierarchy) diagram to build a class hierarchy to reflect the different kinds of markers for different categories of earthquakes.
+- Applied abstract class, inheritance, polymorphism, and UML diagram to build a class hierarchy to reflect the different kinds of markers for different categories of earthquakes.
 - Built event handlers to respond to graphical user input (hover to display a city/earthquake information, click on map to show only earthquakes/cities in thread circle, click in key section to show only that category in the map)
 - Wrote and applied searching and sorting algorithms to manage large data sets (print largest earthquakes in term of magnitude).
 - Used test cases to ensure correctness of a program.
